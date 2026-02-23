@@ -62,3 +62,4 @@ A simple full-stack application to track daily office expenses for tea, water, a
 - `backend/`: Node.js + Express API.
 - `frontend/`: React + Vite + Tailwind CSS UI.
 - `schema.sql`: Database table definition.
+# Expense_Management
