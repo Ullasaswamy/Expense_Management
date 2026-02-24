@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Plus, Trash2, Edit2, TrendingUp, Calendar, Clock, Coffee, Droplets, Save, RefreshCcw, AlertCircle, Settings, LayoutDashboard, History, ArrowLeft, CheckCircle, Filter, X, Search, ChevronDown, Wallet, Eye, EyeOff, LayoutPanelLeft, Lock, User, LogOut } from 'lucide-react';
 import { format, startOfWeek, startOfMonth } from 'date-fns';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = '/api';
 
 const App = () => {
   const [view, setView] = useState('dashboard'); // 'dashboard', 'history', 'settings', 'login'
