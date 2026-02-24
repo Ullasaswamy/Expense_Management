@@ -4,8 +4,6 @@ const db = require('./db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const helmet = require('helmet');
-app.use(helmet());
 
 
 const app = express();
