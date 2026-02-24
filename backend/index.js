@@ -9,8 +9,21 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'Ankiom_Secret_Key_2026';
 
-app.use(cors());
+app.set('trust proxy', 1);
+
+app.use(cors({
+    origin: function (origin, callback) {
+        callback(null, true);
+    },
+    credentials: true
+}));
+
 app.use(express.json());
+
+// Health Check for Production
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'healthy', timestamp: new Date() });
+});
 
 /* ================================
    AUTH MIDDLEWARE

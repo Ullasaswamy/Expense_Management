@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Plus, Trash2, Edit2, TrendingUp, Calendar, Clock, Coffee, Droplets, Save, RefreshCcw, AlertCircle, Settings, LayoutDashboard, History, ArrowLeft, CheckCircle, Filter, X, Search, ChevronDown, Wallet, Eye, EyeOff, LayoutPanelLeft, Lock, User, LogOut } from 'lucide-react';
 import { format, startOfWeek, startOfMonth } from 'date-fns';
 
-const API_BASE_URL = 'http://backend-abc123.168.231.121.218.sslip.io/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 const App = () => {
   const [view, setView] = useState('dashboard'); // 'dashboard', 'history', 'settings', 'login'
