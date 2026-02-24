@@ -11,12 +11,16 @@ const JWT_SECRET = process.env.JWT_SECRET || 'Ankiom_Secret_Key_2026';
 
 app.set('trust proxy', 1);
 
-app.use(cors({
-    origin: function (origin, callback) {
-        callback(null, true);
-    },
+const corsOptions = {
+    origin: process.env.FRONTEND_URL,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
-}));
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
 
 app.use(express.json());
 
